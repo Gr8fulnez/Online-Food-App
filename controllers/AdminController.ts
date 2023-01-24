@@ -6,7 +6,9 @@ export const CreateVendor = async (req:Request, res: Response, next: NextFunctio
     
     const { name, address, pincode, foodType, email, password, ownerName, phone } = <CreateVendorInput>req.body
     
-     const CreateVendor = await vendor.create ({
+   
+
+     const CreatedVendor = await vendor.create ({
         name: name,
         ownerName: ownerName,
         foodType: foodType,
@@ -15,14 +17,12 @@ export const CreateVendor = async (req:Request, res: Response, next: NextFunctio
         phone: phone,
         email: email,
         password: password,
-        salt: '',
+        salt: 'hdsdnjsjds sjsnjsdnsjdns',
         serviceAvailable: false,
         coverImages: [],
         rating: 0,
 })
-    
-    return res.json({ name, address, pincode, foodType, email, password, ownerName, phone })
-    
+    return res.json(CreatedVendor) 
 }
 
 export const GetVendors = async (req: Request, res: Response, next: NextFunction) => {
