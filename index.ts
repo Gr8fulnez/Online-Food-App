@@ -1,6 +1,5 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-// import mongoose from 'mongoose'
 const mongoose = require("mongoose");
 
 import { AdminRoute, VendorRoute } from './routes';
@@ -17,9 +16,7 @@ app.use('/vendor', VendorRoute)
 mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    // useCreateIndex: true
 }).then((result:any) => {
-    // console.log(result)
     console.log('DB connected')
 }).catch((err:any) => console.log('error' + err))
 
